@@ -1,11 +1,13 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+var express       = require('express'), 
+    server        = require('http').createServer(express),
+    path          = require('path'),
+    favicon       = require('serve-favicon'),
+    logger        = require('morgan'),
+    cookieParser  = require('cookie-parser'),
+    bodyParser    = require('body-parser'),
+    routes        = require('./routes/index'),
+    app           = express();
 
-var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
@@ -13,6 +15,8 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+app.set('port', process.env.OPENSHIFT_NODEJS_PORT || 8080);
+app.set('ip', process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1");
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -57,4 +61,4 @@ app.use(function(err, req, res, next) {
 });
 
 
-module.exports = app;
+app.listen(app.get('port'), app.get('ip'));
