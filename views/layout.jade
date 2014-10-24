@@ -2,6 +2,23 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+    link(rel='stylesheet', href='css/bootstrap.min.css')
+    link(rel='stylesheet', href='font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='css/animate.css')
+    link(rel='stylesheet', href='css/style.css')
+    link(rel='stylesheet', href='color/default.css')
+    body(id='page-top', data-spy='scroll', data-target='.navbar-custom')
+        #preloader
+            #load
+        block nav
+        block intro
+        block about
+        block lessons
+        block footer
+        script(src='js/jquery.min.js')
+        script(src='js/bootstrap.min.js')
+        script(src='js/jquery.easing.min.js')
+        script(src='js/jquery.scrollTo.js')
+        script(src='js/wow.min.js')
+        script(src='js/custom.js')
+        script(src='js/counters.js')

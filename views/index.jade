@@ -1,5 +1,179 @@
 extends layout
 
-block content
-  h1= title
-  p Welcome to #{title}
+block nav
+    nav(class='navbar navbar-custom navbar-fixed-top', role='navigation')
+        .container
+            .navbar-header.page-scroll
+                button.navbar-toggle(data-toggle='collapse', data-target='.navbar-main-collapse')
+                    i.fa.fa-bars
+                a.navbar-brand(href='/')
+                    h1= title
+            div(class='collapse navbar-collapse navbar-right navbar-main-collapse')
+                ul.nav.navbar-nav
+                    li.active
+                        a(href='#intro')= 'Главная'
+                    li
+                        a(href='#about')= 'О нас'
+                    li
+                        a(href='#service')= 'Занятия'
+                    //li
+                        a(href='#contact')= 'Контакты'
+                    //li.dropdown
+                        a(href='#', class='dropdown-toggle', data-toggle='dropdown')= 'Dropdown'
+                            b.caret
+                        ul.dropdown-menu
+                            li
+                                a(href='#')= 'Example'
+                            li
+                                a(href='#')= 'Example'
+                            li
+                                a(href='#')= 'Example'
+
+block intro
+    section(id="intro", class="intro")
+        .blur
+        .cont
+            .slogan
+                h2= 'OPENBOARD LETI'
+                h4= 'Знаешь больше? Расскажи!'
+            .page-scroll
+                a(href="#service", class="btn btn-circle")
+                    i(class="fa fa-angle-double-down animated")
+
+block about
+    section(id="about", class="home-section text-center")
+        .heading-about
+            .container
+                .row
+                    .col-lg-8.col-lg-offset-2
+                        div(class="wow bounceInDown",data-wow-delay="0.4s")
+                            .section-heading
+                                h2= 'О нас'
+                                i(class="fa fa-2x fa-angle-down")
+        .container
+            .row
+                div(class="col-lg-2 col-lg-offset-5")
+                    hr(class="marginbot-50")
+            .row
+                div(class="col-xs-6 col-sm-3 col-md-3")
+                    a(href="https://vk.com/vs3x3", target="_blank")
+                        div(class="wow bounceInUp", data-wow-delay="0.2s")
+                            .team.boxed-grey
+                                .inner
+                                    h5= 'Владимир Шефер'
+                                    p.subtitle!= 'Universal <br/>Guru'
+                                    .avatar
+                                        img(src="img/team/1.jpg", alt="", class="img-responsive img-circle")
+                
+                div(class="col-xs-6 col-sm-3 col-md-3")
+                    a(href="https://vk.com/id239106576", target="_blank")
+                        div(class="wow bounceInUp", data-wow-delay="0.4s")
+                            .team.boxed-grey
+                                .inner
+                                    h5= 'Дмитрий Белкин'
+                                    p.subtitle= "Senior theorist. Is charging! Don't touch!"
+                                    .avatar
+                                        img(src="img/team/2.jpg", alt="", class="img-responsive img-circle")
+                
+                div(class="col-xs-6 col-sm-3 col-md-3")
+                    a(href="https://vk.com/res69", target="_blank")
+                        div(class="wow bounceInUp", data-wow-delay="0.6s")
+                            .team.boxed-grey
+                                .inner
+                                    h5= 'Константин Зайцев'
+                                    p.subtitle= 'Advanced mathematical calculator in the brain'
+                                    .avatar
+                                        img(src="img/team/3.jpg", alt="", class="img-responsive img-circle")
+                
+                div(class="col-xs-6 col-sm-3 col-md-3")
+                    a(href="https://vk.com/med1ator", target="_blank")
+                        div(class="wow bounceInUp", data-wow-delay="0.8s")
+                            .team.boxed-grey
+                                .inner
+                                    h5= 'Михаил Чепкасов'
+                                    p.subtitle!= 'Beginning <br/>Web Developer'
+                                    .avatar
+                                        img(src="img/team/4.jpg", alt="", class="img-responsive img-circle")
+
+block lessons
+    section(id="service", class="home-section text-center bg-gray")
+        .heading-about
+            .container
+                .row
+                    div(class="col-lg-8 col-lg-offset-2")
+                        div(class="wow bounceInDown", data-wow-delay="0.4s")
+                            .section-heading
+                                h2='Занятия'
+                                i(class="fa fa-2x fa-angle-down")
+        .container
+            .row
+                div(class="col-lg-2 col-lg-offset-5")
+                    hr(class="marginbot-50")
+            .row
+                div(class="col-sm-3 col-md-3")
+                    div(class="wow fadeInLeft", data-wow-delay="0.2s")
+                        .service-box
+                            div(class="progB chart", data-percent="60", data-animate="3500")
+                                div(class="chart chart-content", style="top: 0px;")
+                                    .percentage
+                                        span.percent
+                                        .service-icon
+                                            img(src="img/icons/service-icon-1.png", alt="")
+                                canvas(height="72", width="72")
+                            canvas(height="72", width="72")
+                        .service-desc
+                            h5= 'Программирование'
+                            p= 'Разбор наиболее сложных этапов выполнения лабораторных работ и практических заданий.'
+                div(class="col-sm-3 col-md-3")
+                    div(class="wow fadeInLeft", data-wow-delay="0.6s")
+                        .service-box
+                            div(class="progB chart", data-percent="60", data-animate="3500")
+                                div(class="chart chart-content", style="top: 0px;")
+                                    .percentage
+                                        span.percent
+                                        .service-icon
+                                            img(src="img/icons/service-icon-2.png", alt="")
+                                canvas(height="72", width="72")
+                            canvas(height="72", width="72")
+                        .service-desc
+                            h5= 'Математический анализ'
+                            p= 'МатАн'
+                div(class="col-sm-3 col-md-3")
+                    div(class="wow fadeInLeft", data-wow-delay="1s")
+                        .service-box
+                            div(class="progB chart", data-percent="60", data-animate="3500")
+                                div(class="chart chart-content", style="top: 0px;")
+                                    .percentage
+                                        span.percent
+                                        .service-icon
+                                            img(src="img/icons/service-icon-3.png", alt="")
+                                canvas(height="72", width="72")
+                            canvas(height="72", width="72")
+                        .service-desc
+                            h5= 'Алгебра и Геометрия'
+                            p= 'АиГ. Уже не знаю что писать.'
+                div(class="col-sm-3 col-md-3")
+                    div(class="wow fadeInLeft", data-wow-delay="1.4s")
+                        .service-box
+                            div(class="progB chart", data-percent="40", data-animate="3500")
+                                div(class="chart chart-content", style="top: 0px;")
+                                    .percentage
+                                        span.percent
+                                        .service-icon
+                                            img(src="img/icons/service-icon-4.png", alt="")
+                                canvas(height="72", width="72")
+                            canvas(height="72", width="72")
+                        .service-desc
+                            h5= 'Физика'
+                            p!= 'Морозов здесь! Здесь все! <br/>Никита, Стас, Гена...'
+
+block footer
+    footer
+        .container
+            .row
+                div(class="col-md-12 col-lg-12")
+                    div(class="wow shake", data-wow-delay="0.4s")
+                        div(class="page-scroll marginbot-30")
+                            a(href="#intro", id="totop", class="btn btn-circle")
+                                i(class="fa fa-angle-double-up animated")
+                    p!= '&copy;Copyright 2014 - FORQUEST Development. All rights reserved.'

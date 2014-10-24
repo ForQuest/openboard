@@ -1,3 +1,4 @@
+#!/bin/env node
 var express       = require('express'), 
     server        = require('http').createServer(express),
     path          = require('path'),
@@ -6,11 +7,8 @@ var express       = require('express'),
     cookieParser  = require('cookie-parser'),
     bodyParser    = require('body-parser'),
     routes        = require('./routes/index'),
-    app           = express();
-
-var users = require('./routes/users');
-
-var app = express();
+    app           = express(),
+    users         = require('./routes/users');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -40,7 +38,7 @@ app.use(function(req, res, next) {
 
 // development error handler
 // will print stacktrace
-if (app.get('env') === 'development') {
+/*if (app.get('env') === 'development') {
     app.use(function(err, req, res, next) {
         res.status(err.status || 500);
         res.render('error', {
@@ -58,7 +56,6 @@ app.use(function(err, req, res, next) {
         message: err.message,
         error: {}
     });
-});
-
+});*/
 
 app.listen(app.get('port'), app.get('ip'));
